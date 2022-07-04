@@ -16,8 +16,8 @@ interface Props {
   user?: []
   viewsCount?: string
   tags?: []
-  children?: string
-  isFullPost?: string
+  children?: JSX.Element | JSX.Element[]
+  isFullPost?: boolean
   isLoading?: boolean
   isEditable?: boolean
 }
@@ -36,6 +36,7 @@ export const Post: React.FC<Props> = ({
   isEditable,
 }) => {
   const dispatch = useDispatch()
+
   if (isLoading) {
     return <PostSkeleton />
   }
@@ -123,7 +124,6 @@ export const Post: React.FC<Props> = ({
                   />
                 </g>
               </svg>
-
               <span>{viewsCount}</span>
             </li>
           </ul>

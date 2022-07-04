@@ -4,4 +4,4 @@ My film collection blog.
 - npm or yarn start
 
 - Stack:
-- React, Typescript, CSS modules, axios, react-hook-form, react-router-dom, react-markdown
+- React, Redux toolkit, Typescript, CSS modules, axios, react-hook-form, react-router-dom, react-markdown

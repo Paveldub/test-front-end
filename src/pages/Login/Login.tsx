@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { fetchLogin, isSelectAuth } from "../../redux/slices/auth"
 import { Navigate } from "react-router-dom"
 
-export const Login = () => {
+export const Login: React.FC = () => {
   const dispatch = useDispatch()
   const isAuth = useSelector(isSelectAuth)
 

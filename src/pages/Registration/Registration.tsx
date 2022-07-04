@@ -5,7 +5,7 @@ import { isSelectAuth } from "../../redux/slices/auth"
 import { Navigate } from "react-router-dom"
 import { fetchRegister } from "../../redux/slices/auth"
 
-export const Registration = () => {
+export const Registration: React.FC = () => {
   const dispatch = useDispatch()
   const isAuth = useSelector(isSelectAuth)
 
@@ -26,7 +26,7 @@ export const Registration = () => {
     const data = await dispatch(fetchRegister(values) as any)
 
     if (!data.payload) {
-      alert("Не удалось зарегестрироваться")
+      alert("Registration failed")
     }
 
     if (data.payload) {

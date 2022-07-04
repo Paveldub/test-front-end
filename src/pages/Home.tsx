@@ -5,7 +5,7 @@ import style from "./Home.module.css"
 
 import { fetchPosts, fetchTags } from "../redux/slices/posts"
 
-export const Home = () => {
+export const Home: React.FC = () => {
   const dispatch = useDispatch()
   const { posts } = useSelector((state: any) => state.posts)
   const userData = useSelector((state: any) => state.auth.data)
