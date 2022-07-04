@@ -1,6 +1,6 @@
 My film collection blog.
 
-- ypm or yarn install
+- npm or yarn install
 - npm or yarn start
 
 - Stack:
