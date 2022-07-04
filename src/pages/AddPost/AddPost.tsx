@@ -116,7 +116,11 @@ export const AddPost = () => {
       />
       {imageUrl && (
         <>
-          <button color="error" onClick={onClickRemoveImage}>
+          <button
+            color="error"
+            className={styles.buttonRemove}
+            onClick={onClickRemoveImage}
+          >
             Remove
           </button>
           <img

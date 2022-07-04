@@ -45,3 +45,21 @@
   border-radius: 5px;
   margin-left: 10px;
 }
+
+.buttonRemove {
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
+.image {
+  margin-top: 20px;
+}
+
+.remove {
+  cursor: pointer;
+}

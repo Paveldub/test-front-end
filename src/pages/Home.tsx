@@ -5,11 +5,34 @@ import style from "./Home.module.css"
 
 import { fetchPosts, fetchTags } from "../redux/slices/posts"
 
+interface UserData {
+  createdAt: string
+  email: string
+  fullName: string
+  token: string
+  _id: string
+  auth: any
+}
+
+interface PostData {
+  createdAt: string
+  imageUrl: string
+  tags: []
+  text: string
+  title: string
+  updatedAt: string
+  viewsCount: number
+  _id: string
+  posts: any
+}
+
 export const Home: React.FC = () => {
   const dispatch = useDispatch()
-  const { posts } = useSelector((state: any) => state.posts)
-  const userData = useSelector((state: any) => state.auth.data)
-  const isPostsLoading = posts.status === "loading"
+  const { posts } = useSelector((state: PostData) => state.posts)
+  const userData = useSelector((state: UserData) => state.auth.data)
+  const isPostsLoading = posts.status === ("loading" as string)
+
+  console.log(posts)
 
   useEffect(() => {
     dispatch(fetchPosts() as any)

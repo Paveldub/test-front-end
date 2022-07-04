@@ -2,8 +2,8 @@ import React from "react"
 import styles from "./UserInfo.module.css"
 
 interface Props {
-  fullName?: any
-  additionalText?: any
+  fullName?: string
+  additionalText?: number
 }
 
 export const UserInfo: React.FC<Props> = ({ fullName, additionalText }) => {

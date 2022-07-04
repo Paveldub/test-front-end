@@ -27,9 +27,6 @@ export const FullPost: React.FC = () => {
     return <Post isLoading={isLoading} isFullPost />
   }
 
-  const renderMarkdown = (): React.ReactNode =>
-    React.createElement(ReactMarkdown as any, { children: data?.text })
-
   return (
     <>
       <Post

@@ -1,14 +1,23 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-
-import styles from "./Header.module.css"
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import { isSelectAuth, logout } from "../../redux/slices/auth"
 
+import styles from "./Header.module.css"
+
+interface UserData {
+  createdAt: string
+  email: string
+  fullName: string
+  token: string
+  _id: string
+  auth: any
+}
+
 export const Header: React.FC = () => {
   const isAuth = useSelector(isSelectAuth)
-  const userData = useSelector((state: any) => state.auth.data)
+  const userData = useSelector((state: UserData) => state.auth.data)
   const dispatch = useDispatch()
 
   const onClickLogout = () => {
