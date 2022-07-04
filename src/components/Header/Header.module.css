@@ -1,0 +1,68 @@
+.root {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+  
+.inner {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.logo {
+    background-color: black;
+    color: #fff;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.15px;
+    border-radius: 5px;
+    padding: 0 10px;
+    text-decoration: none;    
+}
+  
+.buttons button {
+    margin-left: 10px;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+.createArticle {
+    width: 100px;
+    height: 40px;
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout {
+    width: 100px;
+    height: 40px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.login {
+    width: 100px;
+    height: 40px;
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.register {
+    width: 100px;
+    height: 40px;
+    background-color: pink;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

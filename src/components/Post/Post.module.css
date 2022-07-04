@@ -1,0 +1,110 @@
+.root {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+  border: 1px solid #ccc;
+  max-width: 750px;
+}
+
+.editButtons {
+  display: flex;
+  align-items: center;
+}
+
+.editButtons:hover {
+  opacity: 1;
+  background-color: transparent;
+}
+
+.image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.wrapper {
+  padding: 10px 20px 20px;
+}
+
+.content {
+  margin: 30px 0 50px;
+}
+
+.indention {
+  padding-left: 0;
+}
+
+.title {
+  font-size: 28px;
+  margin: 0;
+}
+
+.title a {
+  text-decoration: none;
+  color: #000;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0 0 0;
+  display: flex;
+}
+
+.tags li {
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 15px;
+  opacity: 0.5;
+}
+
+.tags li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.postDetails {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.postDetails svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.postDetails li {
+  display: flex;
+  align-items: center;
+}
+
+.skeleton {
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.skeletonUser {
+  display: flex;
+}
+
+.skeletonTags {
+  display: flex;
+}
+
+.editButtons {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}

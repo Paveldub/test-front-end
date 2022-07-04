@@ -1,0 +1,47 @@
+.editor {
+  padding: 30px 30px 30px 0;
+  max-width: 750px;
+}
+
+.upload {
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.inputs input {
+  margin-bottom: 10px;
+}
+
+.inputs input:last-child {
+  margin-bottom: 0;
+}
+
+.reject {
+  width: 100px;
+  height: 40px;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.publish {
+  width: 100px;
+  height: 40px;
+  background-color: blue;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
