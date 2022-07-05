@@ -5,6 +5,11 @@ import { isSelectAuth } from "../../redux/slices/auth"
 import { Navigate } from "react-router-dom"
 import { fetchRegister } from "../../redux/slices/auth"
 
+interface UserValue {
+  email: string
+  password: string
+}
+
 export const Registration: React.FC = () => {
   const dispatch = useDispatch()
   const isAuth = useSelector(isSelectAuth)
@@ -22,8 +27,8 @@ export const Registration: React.FC = () => {
     mode: "all",
   })
 
-  const onSubmit = async (values: any) => {
-    const data = await dispatch(fetchRegister(values) as any)
+  const onSubmit = async (values: UserValue) => {
+    const data = await dispatch(fetchRegister(values as any) as any)
 
     if (!data.payload) {
       alert("Registration failed")

@@ -5,6 +5,11 @@ import { useForm } from "react-hook-form"
 import { fetchLogin, isSelectAuth } from "../../redux/slices/auth"
 import { Navigate } from "react-router-dom"
 
+interface UserValue {
+  email: string
+  password: string
+}
+
 export const Login: React.FC = () => {
   const dispatch = useDispatch()
   const isAuth = useSelector(isSelectAuth)
@@ -21,8 +26,8 @@ export const Login: React.FC = () => {
     mode: "all",
   })
 
-  const onSubmit = async (values: any) => {
-    const data = await dispatch(fetchLogin(values) as any)
+  const onSubmit = async (values: UserValue) => {
+    const data = await dispatch(fetchLogin(values as any) as any)
 
     if (!data.payload) {
       alert("Not authorized")
