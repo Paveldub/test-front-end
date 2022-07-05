@@ -1,6 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "../../axios"
 
+interface InitialState {
+  data: null
+  status: string
+}
+
 export const fetchLogin = createAsyncThunk(
   "auth/fetchAuth",
   async (params: string) => {
@@ -9,21 +14,23 @@ export const fetchLogin = createAsyncThunk(
   }
 )
 
-export const fetchAuthMe = createAsyncThunk("auth/fetchAuthMe", async () => {
-  const { data } = await axios.get("/auth/me")
-  return data
-})
+export const fetchAuthMe = createAsyncThunk<InitialState>(
+  "auth/fetchAuthMe",
+  async () => {
+    const { data } = await axios.get("/auth/me")
+    return data
+  }
+)
 
 export const fetchRegister = createAsyncThunk(
   "auth/fetchRegister",
-  async (params: any) => {
-    console.log(params)
+  async (params: string) => {
     const { data } = await axios.post("/auth/register", params)
     return data
   }
 )
 
-const initialState = {
+const initialState: InitialState = {
   data: null,
   status: "loading",
 }

@@ -43,7 +43,7 @@ export const Post: React.FC<Props> = ({
 
   const onClickRemove = () => {
     if (window.confirm("Are you sure you want delete post?")) {
-      dispatch(fetchRemovePosts(_id) as any)
+      dispatch(fetchRemovePosts(_id as number) as any)
     }
   }
 

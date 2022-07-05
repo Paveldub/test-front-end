@@ -22,7 +22,6 @@ export const Login: React.FC = () => {
   })
 
   const onSubmit = async (values: any) => {
-    console.log(values)
     const data = await dispatch(fetchLogin(values) as any)
 
     if (!data.payload) {

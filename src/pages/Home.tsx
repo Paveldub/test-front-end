@@ -32,8 +32,6 @@ export const Home: React.FC = () => {
   const userData = useSelector((state: UserData) => state.auth.data)
   const isPostsLoading = posts.status === ("loading" as string)
 
-  console.log(posts)
-
   useEffect(() => {
     dispatch(fetchPosts() as any)
     dispatch(fetchTags() as any)
