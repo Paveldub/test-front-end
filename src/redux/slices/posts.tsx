@@ -4,11 +4,11 @@ import axios from "../../axios"
 interface InitialState {
   posts: {
     items: []
-    status: string
+    status: string | null
   }
   tags: {
     items: []
-    status: string
+    status: string | null
   }
 }
 
@@ -50,39 +50,39 @@ const postSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {},
-  extraReducers: {
+  extraReducers: (builder) => {
     // posts
-    [fetchPosts.pending as any]: (state) => {
+    builder.addCase(fetchPosts.pending, (state) => {
       state.posts.items = []
       state.posts.status = "loading"
-    },
-    [fetchPosts.fulfilled as any]: (state, action) => {
-      state.posts.items = action.payload
-      state.posts.status = "loaded"
-    },
-    [fetchPosts.rejected as any]: (state) => {
-      state.posts.items = []
-      state.posts.status = "error"
-    },
-    // tags
-    [fetchTags.pending as any]: (state) => {
-      state.tags.items = []
-      state.tags.status = "loading"
-    },
-    [fetchTags.fulfilled as any]: (state, action) => {
-      state.tags.items = action.payload
-      state.tags.status = "loaded"
-    },
-    [fetchTags.rejected as any]: (state) => {
-      state.tags.items = []
-      state.tags.status = "error"
-    },
-    // remove post
-    [fetchRemovePosts.pending as any]: (state, action) => {
-      ;(state.posts.items as any[]) = state.posts.items.filter(
-        (obj: any) => obj._id !== action.meta.arg
-      )
-    },
+    }),
+      builder.addCase(fetchPosts.fulfilled, (state, action) => {
+        ;(state.posts.items as any) = action.payload
+        state.posts.status = "loaded"
+      }),
+      builder.addCase(fetchPosts.rejected, (state) => {
+        state.posts.items = []
+        state.posts.status = "error"
+      }),
+      // tags
+      builder.addCase(fetchTags.pending, (state) => {
+        state.tags.items = []
+        state.tags.status = "loading"
+      }),
+      builder.addCase(fetchTags.fulfilled, (state, action) => {
+        ;(state.tags.items as any) = action.payload
+        state.tags.status = "loaded"
+      }),
+      builder.addCase(fetchTags.rejected, (state) => {
+        state.tags.items = []
+        state.tags.status = "error"
+      }),
+      // remove post
+      builder.addCase(fetchRemovePosts.pending, (state, action) => {
+        ;(state.posts.items as any) = state.posts.items.filter(
+          (obj: any) => obj._id !== action.meta.arg
+        )
+      })
   },
 })
 

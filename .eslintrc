@@ -1,0 +1,25 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": { 
+        "no-console": 0,
+        "no-alert": "off",
+        "no-extra-semi": "off",
+        "@typescript-eslint/no-extra-semi": ["off"]
+    },
+    "globals": {
+        "document": true,
+        "window": true,
+        "alert": true,
+        "console": true,
+        "FormData": true
+    }
+}

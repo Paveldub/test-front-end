@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import axios from "../../axios"
 
 interface InitialState {
-  data: null
+  data: null | any
   status: string
 }
 
@@ -43,46 +43,46 @@ const authSlice = createSlice({
       state.data = null
     },
   },
-  extraReducers: {
+  extraReducers: (builder) => {
     // login
-    [fetchLogin.pending as any]: (state) => {
+    builder.addCase(fetchLogin.pending, (state) => {
       state.status = "loading"
       state.data = null
-    },
-    [fetchLogin.fulfilled as any]: (state, action) => {
-      state.status = "loaded"
-      state.data = action.payload
-    },
-    [fetchLogin.rejected as any]: (state) => {
-      state.data = null
-      state.status = "error"
-    },
-    // authMe
-    [fetchAuthMe.pending as any]: (state) => {
-      state.status = "loading"
-      state.data = null
-    },
-    [fetchAuthMe.fulfilled as any]: (state, action) => {
-      state.status = "loaded"
-      state.data = action.payload
-    },
-    [fetchAuthMe.rejected as any]: (state) => {
-      state.data = null
-      state.status = "error"
-    },
-    // register
-    [fetchRegister.pending as any]: (state) => {
-      state.status = "loading"
-      state.data = null
-    },
-    [fetchRegister.fulfilled as any]: (state, action) => {
-      state.status = "loaded"
-      state.data = action.payload
-    },
-    [fetchRegister.rejected as any]: (state) => {
-      state.data = null
-      state.status = "error"
-    },
+    }),
+      builder.addCase(fetchLogin.fulfilled, (state, action) => {
+        state.status = "loaded"
+        state.data = action.payload
+      }),
+      builder.addCase(fetchLogin.rejected, (state) => {
+        state.data = null
+        state.status = "error"
+      }),
+      // authMe
+      builder.addCase(fetchAuthMe.pending, (state) => {
+        state.status = "loading"
+        state.data = null
+      }),
+      builder.addCase(fetchAuthMe.fulfilled, (state, action) => {
+        state.status = "loaded"
+        state.data = action.payload
+      }),
+      builder.addCase(fetchAuthMe.rejected, (state) => {
+        state.data = null
+        state.status = "error"
+      }),
+      // register
+      builder.addCase(fetchRegister.pending, (state) => {
+        state.status = "loading"
+        state.data = null
+      }),
+      builder.addCase(fetchRegister.fulfilled, (state, action) => {
+        state.status = "loaded"
+        state.data = action.payload
+      }),
+      builder.addCase(fetchRegister.rejected, (state) => {
+        state.data = null
+        state.status = "error"
+      })
   },
 })
 
